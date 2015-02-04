@@ -1,0 +1,2 @@
+[28-Jan-2015 15:35:15 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home3/morphcb/public_html/slick/reclaimit/database.php on line 2
+[28-Jan-2015 15:35:15 America/Chicago] PHP Warning:  mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) in /home3/morphcb/public_html/slick/reclaimit/database.php on line 2

@@ -1,0 +1,1893 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="codiqa.ext.css" rel="stylesheet">
+  <link href="jquery.mobile-1.4.2.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="frmstyle.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="jquery.min.js"></script>
+  <script src="jquery.js"></script>
+  <script src="jquery.mobile-1.4.2.min.js"></script>
+  <script src="codiqa.ext.js"></script>
+  <script src="script.js"></script>
+  <script src="offline.js"></script>
+<script>
+                       window.onload = function() {
+    var currentDate = Date(),
+        dateElements = document.getElementsByClassName('date');
+    for (var i = 0; i < dateElements.length; ++i) {
+        dateElements[i].value = currentDate;
+    }
+}
+      </script>
+</head>
+<body>
+<div data-role="page" data-control-title="Home" id="page3" style="background: url('http://slicktools.ca/reclaimit/images/background_grey.jpg') no-repeat">
+    <div data-theme="" data-role="header" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+        <div data-controltype="textblock">
+            <p style="text-align: center;" data-mce-style="text-align: center;">
+                <span style="font-size: xx-small;" data-mce-style="font-size: xx-small;">
+                    <b>
+                        Build 1.5
+                    </b>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div data-role="tabbar" data-iconpos="top" data-theme="a">
+        <ul>
+            <li>
+                <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                    Job Obs
+                </a>
+            </li>
+            <li>
+                <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                    Hazard ID
+                </a>
+            </li>
+            <li>
+                <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                    Wildlife
+                </a>
+            </li>
+            <li>
+                <a href="#page6" data-transition="fade" data-theme="" data-icon="grid">
+                    Enviro
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" data-control-title="Job Observation" id="page1">
+    <div data-theme="" data-role="header" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+    <div role="main" class="ui-content">
+        <div style=" text-align:center" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <div data-controltype="textblock">
+            <h2 style="text-align: center;">
+                <b>
+                    JOB OBSERVATION
+                </b>
+            </h2>
+        </div>
+        <form id="docContainer" action="http://slicktools.ca/reclaimit/jobobservation.php"
+        method="POST" enctype="multipart/form-data"  data-ajax="false" data-offline>
+            <input type="hidden" name="fb_form_custom_html" value="">
+            <input type="hidden" name="fb_form_embedded" value="">
+            <input type="hidden" name="fb_js_enable" value="">
+            <input type="hidden" name="fb_url_embedded" value="">
+           <div>
+                <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                  
+                    <div>
+                       
+                        <input name="Latitude" id="lat" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long" placeholder="" value="" type="hidden">
+                    </div>
+                                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat").val(pos.coords.latitude);
+            $("#long").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Personal Information
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item5_text_1">
+                            First Name
+                        </label>
+                        <input name="FirstName" id="item5_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item6_text_1">
+                            Last Name
+                        </label>
+                        <input name="LastName" id="item6_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="Employer">
+                            Employer
+                        </label>
+                        <input name="Employer" id="Employer" placeholder="" value="" type="text">
+                    </div>
+                </div>
+            </div>
+            <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Activity
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item14_text_1">
+                            Site Name
+                        </label>
+                        <input name="site_name" id="item14_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item37_text_1">
+                            Task
+                        </label>
+                        <input name="Task" id="item37_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="item15_textarea_1">
+                            What Was Observed?
+                        </label>
+                        <textarea name="What Was Observed?" id="item15_textarea_1" placeholder=""></textarea>
+                    </div>
+                    <div id="item41_0_radio" class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>
+                                Was the worker or your supervisor given positive or corrective feedback?
+                            </legend>
+                            <input id="radio1" name="positive_feedback_provided" value="Yes" type="radio">
+                            <label for="radio1">
+                                Yes
+                            </label>
+                            <input id="radio2" name="positive_feedback_provided" value="No" type="radio">
+                            <label for="radio2">
+                                No
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="camerainput">
+                        <label for="camerainput1">
+                            Upload Photo
+                        </label>
+                        <input type="file" name="Upload_Photo" id="camerainput1" accept="image/*"
+                        capture="camera">
+                    </div>
+                    <div id="item19_0_radio" class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>
+                                Follow Up Action Required?
+                            </legend>
+                            <input id="radio3" name="Follow Up Action Required?" value="Yes" type="radio">
+                            <label for="radio3">
+                                Yes
+                            </label>
+                            <input id="radio4" name="Follow Up Action Required?" value="No" type="radio">
+                            <label for="radio4">
+                                No
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="item40_textarea_1">
+                            Next Steps?
+                        </label>
+                        <textarea name="Next Steps?" id="item40_textarea_1" placeholder=""></textarea>
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Observation Detail
+                    </h3>
+                    <div data-role="collapsible-set">
+                        <div id="item44_label_0" data-role="collapsible">
+                            <h3>
+                                Hazard Awareness
+                            </h3>
+                            <h3>
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox21" name="hazard_awareness_safe[]" type="checkbox" value="Correcting An Unsafe Act">
+                                    <label for="checkbox21">
+                                        Correcting An Unsafe Act
+                                    </label>
+                                    <input id="checkbox22" name="hazard_awareness_safe[]" type="checkbox" value="Analyzing Task Hazards">
+                                    <label for="checkbox22">
+                                        Analyzing Task Hazards
+                                    </label>
+                                    <input id="checkbox23" name="hazard_awareness_safe[]" type="checkbox" value="Using Signage or Barriers">
+                                    <label for="checkbox23">
+                                        Using Signage or Barriers
+                                    </label>
+                                    <input id="checkbox24" name="hazard_awareness_safe[]" type="checkbox" value="Recruiting Spotters">
+                                    <label for="checkbox24">
+                                        Recruiting Spotters
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox25" name="hazard_awareness_risk[]" type="checkbox" value="Correcting An Unsafe Act">
+                                    <label for="checkbox25">
+                                        Correcting An Unsafe Act
+                                    </label>
+                                    <input id="checkbox26" name="hazard_awareness_risk[]" type="checkbox" value="Analyzing Task Hazards">
+                                    <label for="checkbox26">
+                                        Analyzing Task Hazards
+                                    </label>
+                                    <input id="checkbox27" name="hazard_awareness_risk[]" type="checkbox" value="Using Signage or Barriers">
+                                    <label for="checkbox27">
+                                        Using Signage or Barriers
+                                    </label>
+                                    <input id="checkbox28" name="hazard_awareness_risk[]" type="checkbox" value="Recruiting Spotters" >
+                                    <label for="checkbox28">
+                                        Recruiting Spotters
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div id="item35_label_0" data-role="collapsible">
+                            <h3>
+                                Working Environment
+                            </h3>
+                            <h3 id="Safe">
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox29" name="working_env_safe[]" type="checkbox" value="Resolving Safety Issues">
+                                    <label for="checkbox29">
+                                        Resolving Safety Issues
+                                    </label>
+                                    <input id="checkbox30" name="working_env_safe[]" type="checkbox" value="Housekeeping Conditions">
+                                    <label for="checkbox30">
+                                        Housekeeping Conditions
+                                    </label>
+                                    <input id="checkbox31" name="working_env_safe[]" type="checkbox" value="Improving Work Conditions">
+                                    <label for="checkbox31">
+                                        Improving Work Conditions
+                                    </label>
+                                    <input id="checkbox32" name="working_env_safe[]" type="checkbox" value="Designing Work Area">
+                                    <label for="checkbox32">
+                                        Designing Work Area
+                                    </label>
+                                    <input id="checkbox33" name="working_env_safe[]" type="checkbox" value="Workplace Design">
+                                    <label for="checkbox33">
+                                        Workplace Design
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox34" name="working_env_risk[]" type="checkbox" value="Resolving Safety Issues">
+                                    <label for="checkbox34">
+                                        Resolving Safety Issues
+                                    </label>
+                                    <input id="checkbox35" name="working_env_safe[]" type="checkbox" value="Housekeeping Conditions">
+                                    <label for="checkbox35">
+                                        Housekeeping Conditions
+                                    </label>
+                                    <input id="checkbox36" name="working_env_safe[]" type="checkbox" value="Improving Work Conditions">
+                                    <label for="checkbox36">
+                                        Improving Work Conditions
+                                    </label>
+                                    <input id="checkbox37" name="working_env_safe[]" type="checkbox" value="Designing Work Area">
+                                    <label for="checkbox37">
+                                        Designing Work Area
+                                    </label>
+                                    <input id="checkbox38" name="working_env_safe[]" type="checkbox" value="Workplace Design">
+                                    <label for="checkbox38">
+                                        Workplace Design
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div id="item28_label_0" data-role="collapsible">
+                            <h3>
+                                Job Planning and Processes
+                            </h3>
+                            <h3 id="Safe">
+                                Safe
+                            </h3>
+                            <div id="checkboxes10" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox41" name="job_plan_process_safe[]" type="checkbox" value=" Preplanning">
+                                    <label for="checkbox41">
+                                        Preplanning
+                                    </label>
+                                    <input id="checkbox39" name="job_plan_process_safe[]" type="checkbox" value="Managing Scope Changes">
+                                    <label for="checkbox39">
+                                        Managing Scope Changes
+                                    </label>
+                                    <input id="checkbox40" name="job_plan_process_safe[]" type="checkbox" value="Communicating Hazards">
+                                    <label for="checkbox40">
+                                        Communicating Hazards
+                                    </label>
+                                    <input id="checkbox42" name="job_plan_process_safe[]" type="checkbox" value="Taking Time">
+                                    <label for="checkbox42">
+                                        Taking Time
+                                    </label>
+                                    <input id="checkbox43" name="job_plan_process_safe[]" type="checkbox" value="Demonstrating Knowledge">
+                                    <label for="checkbox43">
+                                        Demonstrating Knowledge
+                                    </label>
+                                    <input id="checkbox44" name="job_plan_process_safe[]" type="checkbox" value="Suggesting Improvements">
+                                    <label for="checkbox44">
+                                        Suggesting Improvements
+                                    </label>
+                                    <input id="checkbox45" name="job_plan_process_safe[]" type="checkbox" value="Requesting Equipment">
+                                    <label for="checkbox45">
+                                        Requesting Equipment
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3 id="At Risk">
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox46" name="job_plan_process_risk[]" type="checkbox" value="Preplanning">
+                                    <label for="checkbox46">
+                                        Preplanning
+                                    </label>
+                                    <input id="checkbox47" name="job_plan_process_risk[]" type="checkbox" value="Managing Scope Changes">
+                                    <label for="checkbox47">
+                                        Managing Scope Changes
+                                    </label>
+                                    <input id="checkbox48" name="job_plan_process_risk[]" type="checkbox" value="Communicating Hazards">
+                                    <label for="checkbox48">
+                                        Communicating Hazards
+                                    </label>
+                                    <input id="checkbox49" name="job_plan_process_risk[]" type="checkbox" value="Taking Time">
+                                    <label for="checkbox49">
+                                        Taking Time
+                                    </label>
+                                    <input id="checkbox50" name="job_plan_process_risk[]" type="checkbox" value="Demonstrating Knowledge">
+                                    <label for="checkbox50">
+                                        Demonstrating Knowledge
+                                    </label>
+                                    <input id="checkbox51" name="job_plan_process_risk[]" type="checkbox" value="Suggesting Improvements">
+                                    <label for="checkbox51">
+                                        Suggesting Improvements
+                                    </label>
+                                    <input id="checkbox52" name="job_plan_process_risk[]" type="checkbox" value="Requesting Equipment">
+                                    <label for="checkbox52">
+                                        Requesting Equipment
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div id="Communication" data-role="collapsible">
+                            <h3>
+                                Communication
+                            </h3>
+                            <h3>
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox53" name="communication_safe[]" type="checkbox" value="Participating in Planning">
+                                    <label for="checkbox53">
+                                        Participating in Planning
+                                    </label>
+                                    <input id="checkbox54" name="communication_safe[]" type="checkbox" value="Communicating H&amp;S Issues">
+                                    <label for="checkbox54">
+                                        Communicating H&amp;S Issues
+                                    </label>
+                                    <input id="checkbox55" name="communication_safe[]" type="checkbox" value="Encouraging Others to Report">
+                                    <label for="checkbox55">
+                                        Encouraging Others to Report
+                                    </label>
+                                    <input id="checkbox56" name="communication_safe[]" type="checkbox" value="Responding to Feedback">
+                                    <label for="checkbox56">
+                                        Responding to Feedback
+                                    </label>
+                                    <input id="checkbox57" name="communication_safe[]" type="checkbox" value="Job Safety Analysis">
+                                    <label for="checkbox57">
+                                        Job Safety Analysis
+                                    </label>
+                                    <input id="checkbox58" name="communication_safe[]" type="checkbox" value="Communication Methods">
+                                    <label for="checkbox58">
+                                        Communication Methods
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3 id="At Risk">
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox59" name="communication_risk[]" type="checkbox" value="Participating in Planning">
+                                    <label for="checkbox59">
+                                        Participating in Planning
+                                    </label>
+                                    <input id="checkbox60" name="communication_risk[]" type="checkbox" value="Communicating H&amp;S Issues">
+                                    <label for="checkbox60">
+                                        Communicating H&amp;S Issues
+                                    </label>
+                                    <input id="checkbox61" name="communication_risk[]" type="checkbox" value="Encouraging Others to Report">
+                                    <label for="checkbox61">
+                                        Encouraging Others to Report
+                                    </label>
+                                    <input id="checkbox62" name="communication_risk[]" type="checkbox" value="Responding to Feedback">
+                                    <label for="checkbox62">
+                                        Responding to Feedback
+                                    </label>
+                                    <input id="checkbox63" name="communication_risk[]" type="checkbox" value="Job Safety Analysis">
+                                    <label for="checkbox63">
+                                        Job Safety Analysis
+                                    </label>
+                                    <input id="checkbox64" name="communication_risk[]" type="checkbox" value="Communication Methods">
+                                    <label for="checkbox64">
+                                        Communication Methods
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h3>
+                                Personal Protection
+                            </h3>
+                            <h3 id="Safe">
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox65" name="personal_protectoin_safe[]" type="checkbox" value="Use of PPE">
+                                    <label for="checkbox65">
+                                        Use of PPE
+                                    </label>
+                                    <input id="checkbox66" name="personal_protectoin_safe[]" type="checkbox" value=" Making PPE Available">
+                                    <label for="checkbox66">
+                                        Making PPE Available
+                                    </label>
+                                    <input id="checkbox67" name="personal_protectoin_safe[]" type="checkbox" value="Maintaining PPE">
+                                    <label for="checkbox67">
+                                        Maintaining PPE
+                                    </label>
+                                    <input id="checkbox68" name="personal_protectoin_safe[]" type="checkbox" value="Dressing For The Weather">
+                                    <label for="checkbox68">
+                                        Dressing For The Weather
+                                    </label>
+                                    <input id="checkbox69" name="personal_protectoin_safe[]" type="checkbox" value="Asking for Help Lifting">
+                                    <label for="checkbox69">
+                                        Asking for Help Lifting
+                                    </label>
+                                    <input id="checkbox70" name="personal_protectoin_safe[]" type="checkbox" value="Requesting Training">
+                                    <label for="checkbox70">
+                                        Requesting Training
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3 id="At Risk">
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox71" name="personal_protectoin_risk[]" type="checkbox" value="Use of PPE">
+                                    <label for="checkbox71">
+                                        Use of PPE
+                                    </label>
+                                    <input id="checkbox72" name="personal_protectoin_risk[]" type="checkbox" value="Making PPE Available">
+                                    <label for="checkbox72">
+                                        Making PPE Available
+                                    </label>
+                                    <input id="checkbox73" name="personal_protectoin_risk[]" type="checkbox" value="Maintaining PPE">
+                                    <label for="checkbox73">
+                                        Maintaining PPE
+                                    </label>
+                                    <input id="checkbox74" name="personal_protectoin_risk[]" type="checkbox" value="Dressing For The Weather">
+                                    <label for="checkbox74">
+                                        Dressing For The Weather
+                                    </label>
+                                    <input id="checkbox75" name="personal_protectoin_risk[]" type="checkbox" value="Asking for Help Lifting">
+                                    <label for="checkbox75">
+                                        Asking for Help Lifting
+                                    </label>
+                                    <input id="checkbox76" name="personal_protectoin_risk[]" type="checkbox" value="Requesting Training">
+                                    <label for="checkbox76">
+                                        Requesting Training
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="item46_label_0" data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h3>
+                                Equipment/Tools
+                            </h3>
+                            <h3>
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical" >
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox77" name="equipment_safe[]" type="checkbox" value="Using Equipment">
+                                    <label for="checkbox77">
+                                        Using Equipment
+                                    </label>
+                                    <input id="checkbox78" name="equipment_safe[]" type="checkbox" value="Maintaining Equipment">
+                                    <label for="checkbox78">
+                                        Maintaining Equipment
+                                    </label>
+                                    <input id="checkbox79" name="equipment_safe[]" type="checkbox" value="Selecting Equipment">
+                                    <label for="checkbox79">
+                                        Selecting Equipment
+                                    </label>
+                                    <input id="checkbox80" name="equipment_safe[]" type="checkbox" value="Storing Equipment">
+                                    <label for="checkbox80">
+                                        Storing Equipment
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox81" name="equipment_risk[]" type="checkbox" value="Using Equipment">
+                                    <label for="checkbox81">
+                                        Using Equipment
+                                    </label>
+                                    <input id="checkbox82" name="equipment_risk[]" type="checkbox" value="Maintaining Equipment">
+                                    <label for="checkbox82">
+                                        Maintaining Equipment
+                                    </label>
+                                    <input id="checkbox83" name="equipment_risk[]" type="checkbox" value="Selecting Equipment">
+                                    <label for="checkbox83">
+                                        Selecting Equipment
+                                    </label>
+                                    <input id="checkbox84" name="equipment_risk[]" type="checkbox" value="Storing Equipment">
+                                    <label for="checkbox84">
+                                        Storing Equipment
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="item22_label_0" data-role="collapsible-set">
+                        <div id="item22_label_0" data-role="collapsible">
+                            <h3>
+                                Body Position
+                            </h3>
+                            <h3>
+                                Safe
+                            </h3>
+                            <div id="Safe" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox85" name="bodyposition_safe[]" type="checkbox" value="Staying In The Line of Fire">
+                                    <label for="checkbox85">
+                                        Staying In The Line of Fire
+                                    </label>
+                                    <input id="checkbox86" name="bodyposition_safe[]" type="checkbox" value="Using Balance, Traction and Grip">
+                                    <label for="checkbox86">
+                                        Using Balance, Traction and Grip
+                                    </label>
+                                    <input id="checkbox87" name="bodyposition_safe[]" type="checkbox" value="Overreaching">
+                                    <label for="checkbox87">
+                                        Overreaching
+                                    </label>
+                                    <input id="checkbox88" name="bodyposition_safe[]" type="checkbox" value="Overexerting">
+                                    <label for="checkbox88">
+                                        Overexerting
+                                    </label>
+                                    <input id="checkbox89" name="bodyposition_safe[]" type="checkbox" value=" Stretching and Microbreaks">
+                                    <label for="checkbox89">
+                                        Stretching and Microbreaks
+                                    </label>
+                                    <input id="checkbox90" name="bodyposition_safe[]" type="checkbox" value="Using Barriers">
+                                    <label for="checkbox90">
+                                        Using Barriers
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <h3>
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox91" name="bodyposition_risk[]" type="checkbox" value="Staying In The Line of Fire">
+                                    <label for="checkbox91">
+                                        Staying In The Line of Fire
+                                    </label>
+                                    <input id="checkbox92" name="bodyposition_risk[]" type="checkbox" value="Using Balance, Traction and Grip">
+                                    <label for="checkbox92">
+                                        Using Balance, Traction and Grip
+                                    </label>
+                                    <input id="checkbox93" name="bodyposition_risk[]" type="checkbox" value="Overreaching">
+                                    <label for="checkbox93">
+                                        Overreaching
+                                    </label>
+                                    <input id="checkbox94" name="bodyposition_risk[]" type="checkbox" value=" Overexerting">
+                                    <label for="checkbox94">
+                                        Overexerting
+                                    </label>
+                                    <input id="checkbox95" name="bodyposition_risk[]" type="checkbox" value="Stretching and Microbreaks">
+                                    <label for="checkbox95">
+                                        Stretching and Microbreaks
+                                    </label>
+                                    <input id="checkbox96" name="bodyposition_risk[]" type="checkbox" value="Using Barriers">
+                                    <label for="checkbox96">
+                                        Using Barriers
+                                    </label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="collapsible-set">
+                        <div id="item24_label_0" data-role="collapsible">
+                            <h3>
+                                Leadership/Supervision
+                            </h3>
+                            <h3>
+                                Safe
+                            </h3>
+                            <div id="checkboxes20" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox97" name="leadership_supervision_safe[]" type="checkbox" value="Coaching">
+                                    <label for="checkbox97">
+                                        Coaching
+                                    </label>
+                                    <input id="checkbox98" name="leadership_supervision_safe[]" type="checkbox" value=" Promoting Team Work">
+                                    <label for="checkbox98">
+                                        Promoting Team Work
+                                    </label>
+                                    <input id="checkbox99" name="leadership_supervision_safe[]" type="checkbox" value="Engaging in Safety Meetings">
+                                    <label for="checkbox99">
+                                        Engaging in Safety Meetings
+                                    </label>
+                                    <input id="checkbox100" name="leadership_supervision_safe[]" type="checkbox" value="Asking for Worker Input">
+                                    <label for="checkbox100">
+                                        Asking for Worker Input
+                                    </label>
+                                    <input id="checkbox101" name="leadership_supervision_safe[]" type="checkbox" value="Inviting Expert Opinion">
+                                    <label for="checkbox101">
+                                        Inviting Expert Opinion
+                                    </label>
+                                    <input id="checkbox103" name="leadership_supervision_safe[]" type="checkbox" value="Modeling Behaviour">
+                                    <label for="checkbox103">
+                                        Modeling Behaviour
+                                    </label>
+                                    <input id="checkbox102" name="leadership_supervision_safe[]" type="checkbox" value="Other">
+                                    <label for="checkbox102">
+                                        Other
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <div class="ui-field-contain" data-controltype="textinput">
+                                <label for="Safe">
+                                    Other
+                                </label>
+                                <input name="leadership_supervision_other" id="Safe" placeholder="" value=""
+                                type="text">
+                            </div>
+                            <h3>
+                                At Risk
+                            </h3>
+                            <div id="At Risk" class="ui-field-contain" data-controltype="checkboxes">
+                                <fieldset data-role="controlgroup" data-type="vertical">
+                                    <legend>
+                                        Choose:
+                                    </legend>
+                                    <input id="checkbox104" name="leadership_supervision_risk[]" type="checkbox" value="Coaching">
+                                    <label for="checkbox104">
+                                        Coaching
+                                    </label>
+                                    <input id="checkbox105" name="leadership_supervision_risk[]" type="checkbox" value="Promoting Team Work">
+                                    <label for="checkbox105">
+                                        Promoting Team Work
+                                    </label>
+                                    <input id="checkbox106" name="leadership_supervision_risk[]" type="checkbox" value="Engaging in Safety Meetings">
+                                    <label for="checkbox106">
+                                        Engaging in Safety Meetings
+                                    </label>
+                                    <input id="checkbox107" name="leadership_supervision_risk[]" type="checkbox" value="Asking for Worker Input">
+                                    <label for="checkbox107">
+                                        Asking for Worker Input
+                                    </label>
+                                    <input id="checkbox108" name="leadership_supervision_risk[]" type="checkbox" value="Inviting Expert Opinion">
+                                    <label for="checkbox108">
+                                        Inviting Expert Opinion
+                                    </label>
+                                    <input id="checkbox109" name="leadership_supervision_risk[]" type="checkbox" value="Modeling Behaviour">
+                                    <label for="checkbox109">
+                                        Modeling Behaviour
+                                    </label>
+                                    <input id="checkbox110" name="leadership_supervision_risk[]" type="checkbox" value="Other">
+                                    <label for="checkbox110">
+                                        Other
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <div class="ui-field-contain" data-controltype="textinput">
+                                <label for="At Risk">
+                                    Other
+                                </label>
+                                <input name="leadership_supervision_other" id="At Risk" placeholder=""
+                                value="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input id="fb-submit-button" type="submit" value="Submit">
+            
+        </form>
+    </div>
+    <div data-role="tabbar" data-iconpos="top" data-theme="a">
+        <ul>
+            <li>
+                <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                    Job Obs
+                </a>
+            </li>
+            <li>
+                <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                    Hazard ID
+                </a>
+            </li>
+            <li>
+                <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                    Wildlife
+                </a>
+            </li>
+            <li>
+                <a href="#page6" data-transition="fade" data-theme="" data-icon="grid">
+                    Enviro
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" data-control-title="Hazard ID/Near Miss" id="page2">
+    <div data-theme="" data-role="header" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+    <div role="main" class="ui-content">
+        <div style=" text-align:center" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <div data-controltype="textblock">
+            <h2 style="text-align: center;">
+                <b>
+                    HAZARD ID/NEAR MISS
+                </b>
+            </h2>
+        </div>
+        <form id="docContainer2" action="http://slicktools.ca/reclaimit/hazardid.php"
+        method="POST" enctype="multipart/form-data" data-ajax="false" data-offline>
+           <div>
+                <div>
+                   
+                    <div>
+                     
+                        <input name="Date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat2" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long2" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat2").val(pos.coords.latitude);
+            $("#long2").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            </div>
+            <div id="hazard_assess" class="ui-field-contain" data-controltype="radiobuttons">
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <input id="radio21" name="hazard_assess" value="Hazard ID" type="radio">
+                    <label for="radio21">
+                        Hazard ID
+                    </label>
+                    <input id="radio22" name="hazard_assess" value="Near Miss" type="radio">
+                    <label for="radio22">
+                        Near Miss
+                    </label>
+                </fieldset>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>
+                        Personal Information
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item5_text_1">
+                            First Name
+                        </label>
+                        <input name="First Name" id="item5_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="Last Name">
+                            Last Name
+                        </label>
+                        <input name="Last Name" id="Last Name" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput31">
+                            Employer
+                        </label>
+                        <input name="Employer" id="textinput31" placeholder="" value="" type="text">
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="Location of Occurance">
+                            Location of Occurance
+                        </label>
+                        <input name="Location of Occurance" id="Location of Occurance" placeholder=""
+                        value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="Company/ies Involved">
+                            Company/ies Involved
+                        </label>
+                        <input name="Company/ies Involved" id="Company/ies Involved" placeholder=""
+                        value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="What Was Observed?">
+                            What Was Observed?
+                        </label>
+                        <textarea name="what_was_observed" id="What Was Observed?" placeholder=""></textarea>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="camerainput">
+                        <label for="Upload Photo">
+                            Upload Photo
+                        </label>
+                        <input type="file" name="Upload Photo" id="Upload Photo" accept="image/*"
+                        capture="camera">
+                    </div>
+                </div>
+            </div>
+            <h3>
+                Potential Event Type
+            </h3>
+            <div id="Potential Event Type" class="ui-field-contain" data-controltype="checkboxes">
+                <fieldset data-role="controlgroup" data-type="vertical">
+                    <legend>
+                        Choose:
+                    </legend>
+                    <input id="checkbox111" name="Injury" type="checkbox" value="yes">
+                    <label for="checkbox111">
+                        Injury
+                    </label>
+                    <input id="checkbox112" name="Illness" type="checkbox" value="yes">
+                    <label for="checkbox112">
+                        Illness
+                    </label>
+                    <input id="checkbox113" name="Property Damage" type="checkbox" value="yes">
+                    <label for="checkbox113">
+                        Property Damage
+                    </label>
+                    <input id="checkbox114" name="Equipment Failure" type="checkbox" value="yes">
+                    <label for="checkbox114">
+                        Equipment Failure
+                    </label>
+                    <input id="checkbox115" name="Release/Spill" type="checkbox" value="yes">
+                    <label for="checkbox115">
+                        Release/Spill
+                    </label>
+                    <input id="checkbox116" name="Security" type="checkbox" value="yes">
+                    <label for="checkbox116">
+                        Security
+                    </label>
+                    <input id="checkbox117" name="Fire/Explosion" type="checkbox" value="yes">
+                    <label for="checkbox117">
+                        Fire/Explosion
+                    </label>
+                    <input id="checkbox118" name="Mobile Equipment" type="checkbox" value="yes">
+                    <label for="checkbox118">
+                        Mobile Equipment
+                    </label>
+                    <input id="checkbox119" name="Public Complaint" type="checkbox" value="yes">
+                    <label for="checkbox119">
+                        Public Complaint
+                    </label>
+                    <input id="checkbox120" name="Electrical Event" type="checkbox" value="yes">
+                    <label for="checkbox120">
+                        Electrical Event
+                    </label>
+                    <input id="checkbox121" name="Motor Vehicle" type="checkbox" value="yes">
+                    <label for="checkbox121">
+                        Motor Vehicle
+                    </label>
+                </fieldset>
+            </div>
+            <div class="ui-field-contain" data-controltype="selectmenu">
+                <label for="item24_select_1">
+                    Activity
+                </label>
+                <select id="item24_select_1" name="activity">
+                    <option value="none">
+                        Choose One
+                    </option>
+                    <option value="Propogate Collection">
+                        Propogate Collection
+                    </option>
+                    <option value="Tree Planting">
+                        Tree Planting
+                    </option>
+                    <option value="Driving">
+                        Driving
+                    </option>
+                    <option value="Recollection">
+                        Recollection
+                    </option>
+                    <option value="Working Around Aircraft">
+                        Working Around Aircraft
+                    </option>
+                    <option value="Field Assessments">
+                        Field Assessments
+                    </option>
+                </select>
+            </div>
+            <div class="ui-field-contain" data-controltype="textarea">
+                <label for="Recommended Corrective Action(s)">
+                    Recommended Corrective Action(s)
+                </label>
+                <textarea name="Recommended Corrective Action(s)" id="Recommended Corrective Action(s)"
+                placeholder=""></textarea>
+            </div>
+            <div class="ui-field-contain" data-controltype="dateinput">
+                <label for="corrective_action_date">
+                    Corrective Action Due Date
+                </label>
+                <input name="corrective_action_date" id="corrective_action_date" placeholder=""
+                value="" type="date">
+            </div>
+            <input id="fb-submit-button" type="submit" value="Submit">
+        </form>
+        <div class="message2">
+        </div>
+    </div>
+    <div data-role="tabbar" data-iconpos="top" data-theme="a">
+        <ul>
+            <li>
+                <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                    Job Obs
+                </a>
+            </li>
+            <li>
+                <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                    Hazard ID
+                </a>
+            </li>
+            <li>
+                <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                    Wildlife
+                </a>
+            </li>
+            <li>
+                <a href="#page6" data-transition="fade" data-theme="" data-icon="grid">
+                    Enviro
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" data-control-title="Wildlife Observation" id="page4">
+    <div data-theme="" data-role="header" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+    <div role="main" class="ui-content">
+        <div style=" text-align:center" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <div data-controltype="textblock">
+            <h2 data-mce-style="text-align: center;" style="text-align: center;">
+                <b>
+                    WILDLIFE OBSERVATION
+                </b>
+            </h2>
+        </div>
+        <form id="docContainer3" action="http://slicktools.ca/reclaimit/wildlife.php"
+        method="POST" enctype="multipart/form-data" data-ajax="false" data-offline>
+        <div>
+                <div>
+                   
+                    <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat3" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long3" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat3").val(pos.coords.latitude);
+            $("#long3").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Personal Information
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item5_text_1">
+                            First Name
+                        </label>
+                        <input name="FirstName" id="item5_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item6_text_1">
+                            Last Name
+                        </label>
+                        <input name="LastName" id="item6_text_1" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput32">
+                            Employer
+                        </label>
+                        <input name="Employer" id="textinput32" placeholder="" value="" type="text">
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Location Information
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item14_text_1">
+                            Location of Occurrence
+                        </label>
+                        <input name="Location of Occurrence" id="item14_text_1" placeholder="If Not At Current Location"
+                        value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="camerainput">
+                        <label for="item7_file_1">
+                            Upload Photo
+                        </label>
+                        <input type="file" name="Upload Photo" id="item7_file_1" accept="image/*"
+                        capture="camera">
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Wildlife Observation
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="selectmenu">
+                        <label for="item42_select_1">
+                            Wildlife Features Observed
+                        </label>
+                        <select id="item42_select_1" name="Wildlife Features Observed">
+                            <option value="Choose One">
+                                Choose One
+                            </option>
+                            <option value="Animal Tracks">
+                                Animal Tracks
+                            </option>
+                            <option value="Animal Den">
+                                Animal Den
+                            </option>
+                            <option value="Mineral Lick">
+                                Mineral Lick
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item43_text_1">
+                            Description of Other
+                        </label>
+                        <input name="Description of Other" id="item43_text_1" placeholder="" value=""
+                        type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput33">
+                            Wildlife Species
+                        </label>
+                        <input name="Wildlife Species" id="textinput33" placeholder="" value=""
+                        type="text">
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <h3>
+                        Number of Animals Sighted
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item44_number_1">
+                            Males (if known)
+                        </label>
+                        <input name="male" id="item44_number_1" placeholder="" value="" type="number">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item45_number_1">
+                            Females (if known)
+                        </label>
+                        <input name="female" id="item45_number_1" placeholder="" value="" type="number">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item56_number_1">
+                            Adult
+                        </label>
+                        <input name="adults" id="item56_number_1" placeholder="" value="" type="number">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item46_number_1">
+                            Young
+                        </label>
+                        <input name="young" id="item46_number_1" placeholder="" value="" type="number">
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Activity Observed
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="selectmenu">
+                        <label for="item49_select_1">
+                            Activity
+                        </label>
+                        <select id="item49_select_1" name="activity">
+                            <option value="Choose One">
+                                Choose One
+                            </option>
+                            <option value="Feeding">
+                                Feeding
+                            </option>
+                            <option value="Resting">
+                                Resting
+                            </option>
+                            <option value="Flying">
+                                Flying
+                            </option>
+                            <option value="Walking">
+                                Walking
+                            </option>
+                            <option value="Standing">
+                                Standing
+                            </option>
+                            <option value="Bedding">
+                                Bedding
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item50_text_1">
+                            Other
+                        </label>
+                        <input name="activity_other" id="item50_text_1" placeholder="" value=""
+                        type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="selectmenu">
+                        <label for="item51_select_1">
+                            Habitat Type
+                        </label>
+                        <select id="item51_select_1" name="habitat_type">
+                            <option value="Choose One">
+                                Choose One
+                            </option>
+                            <option value="Road">
+                                Road
+                            </option>
+                            <option value="Pipeline">
+                                Pipeline
+                            </option>
+                            <option value="Bog">
+                                Bog
+                            </option>
+                            <option value="Natural Clearing">
+                                Natural Clearing
+                            </option>
+                            <option value=" Cut Line">
+                                Cut Line
+                            </option>
+                            <option value="Forest">
+                                Forest
+                            </option>
+                            <option value="Open Area">
+                                Open Area
+                            </option>
+                            <option value="Marsh">
+                                Marsh
+                            </option>
+                            <option value="Fen">
+                                Fen
+                            </option>
+                            <option value="Open Wetland">
+                                Open Wetland
+                            </option>
+                            <option value="Cut Block">
+                                Cut Block
+                            </option>
+                            <option value="Lease">
+                                Lease
+                            </option>
+                            <option value="Other">
+                                Other
+                            </option>
+                        </select>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item52_text_1">
+                            Other
+                        </label>
+                        <input name="habitat_other" id="item52_text_1" placeholder="" value=""
+                        type="text">
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Condition Found
+                    </h3>
+                    <div id="Condition Found" class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <input id="radio51" name="Condition Found" value="Healthy" type="radio">
+                            <label for="radio51">
+                                Healthy
+                            </label>
+                            <input id="radio52" name="Condition Found" value="Sick" type="radio">
+                            <label for="radio52">
+                                Sick
+                            </label>
+                            <input id="radio53" name="Condition Found" value="Wounded" type="radio">
+                            <label for="radio53">
+                                Wounded
+                            </label>
+                            <input id="radio54" name="Condition Found" value="Dead" type="radio">
+                            <label for="radio54">
+                                Dead
+                            </label>
+                        </fieldset>
+                    </div>
+                    <h3>
+                        Suspected Cause
+                    </h3>
+                    <div id="Suspected Cause" class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <input id="radio55" name="Suspected Cause" value="N/A" type="radio">
+                            <label for="radio55">
+                                N/A
+                            </label>
+                            <input id="radio56" name="Suspected Cause" value="Interaction with Infrastructure"
+                            type="radio">
+                            <label for="radio56">
+                                Interaction with Infrastructure
+                            </label>
+                            <input id="radio57" name="Suspected Cause" value="Electrocution" type="radio">
+                            <label for="radio57">
+                                Electrocution
+                            </label>
+                            <input id="radio58" name="Suspected Cause" value="Poaching/Hunting" type="radio">
+                            <label for="radio58">
+                                Poaching/Hunting
+                            </label>
+                            <input id="radio59" name="Suspected Cause" value="Predation" type="radio">
+                            <label for="radio59">
+                                Predation
+                            </label>
+                            <input id="radio60" name="Suspected Cause" value="Road Collision" type="radio">
+                            <label for="radio60">
+                                Road Collision
+                            </label>
+                            <input id="radio61" name="Suspected Cause" value="Unknown" type="radio">
+                            <label for="radio61">
+                                Unknown
+                            </label>
+                            <input id="radio62" name="Suspected Cause" value="Other" type="radio">
+                            <label for="radio62">
+                                Other
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="item55_text_1">
+                            Other
+                        </label>
+                        <input name="suspected_cause_other" id="item55_text_1" placeholder=""
+                        value="" type="text">
+                    </div>
+                </div>
+            </div>
+            <input id="fb-submit-button" type="submit" value="Submit">
+        </form>
+        <div class="message3">
+        </div>
+    </div>
+    <div data-role="tabbar" data-iconpos="top" data-theme="a">
+        <ul>
+            <li>
+                <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                    Job Obs
+                </a>
+            </li>
+            <li>
+                <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                    Hazard ID
+                </a>
+            </li>
+            <li>
+                <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                    Wildlife
+                </a>
+            </li>
+            <li>
+                <a href="#page6" data-transition="fade" data-theme="" data-icon="grid">
+                    Enviro
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div data-role="page" data-control-title="Environment" id="page6">
+    <div data-theme="a" data-role="header" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <div data-controltype="textblock">
+            <h2 data-mce-style="text-align: center;" style="text-align: center;">
+                <b>
+                    ENVIRONMENTAL OBSERVATIONS
+                </b>
+            </h2>
+        </div>
+        <form id="docContainer4" action="http://slicktools.ca/reclaimit/env_obs.php" method="post" data-ajax="false" data-offline>
+         <div>
+                <div>
+                   
+                    <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat4" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long4" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat4").val(pos.coords.latitude);
+            $("#long4").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            </div>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible">
+                    <h3>
+                        Personal Information
+                    </h3>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput22">
+                            First Name
+                        </label>
+                        <input name="First Name" id="textinput22" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput23">
+                            Last Name
+                        </label>
+                        <input name="Last Name" id="textinput23" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput34">
+                            Employer
+                        </label>
+                        <input name="Employer" id="textinput34" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput24">
+                            Location
+                        </label>
+                        <input name="Location" id="textinput24" placeholder="" value="" type="text">
+                    </div>
+                </div>
+                <div data-role="collapsible">
+                    <h3>
+                        Soil Concerns
+                    </h3>
+                    <div id="Soil Concerns" class="ui-field-contain" data-controltype="checkboxes">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="checkbox1" name="Stain" type="checkbox" value="yes">
+                            <label for="checkbox1">
+                                Stain
+                            </label>
+                            <input id="checkbox2" name="Slumping" type="checkbox"  value="yes">
+                            <label for="checkbox2">
+                                Slumping
+                            </label>
+                            <input id="checkbox3" name="Erosion" type="checkbox" value="yes">
+                            <label for="checkbox3">
+                                Erosion
+                            </label>
+                            <input id="checkbox4" name="Stress Cracks" type="checkbox" value="yes">
+                            <label for="checkbox4">
+                                Stress Cracks
+                            </label>
+                            <input id="checkbox5" name="Contour Mismatch" type="checkbox" value="yes">
+                            <label for="checkbox5">
+                                Contour Mismatch
+                            </label>
+                            <input id="checkbox6" name="Overland Flow" type="checkbox" value="yes">
+                            <label for="checkbox6">
+                                Overland Flow
+                            </label>
+                            <input id="checkbox7" name="Equipment Ruts/Tracks" type="checkbox" value="yes">
+                            <label for="checkbox7">
+                                Equipment Ruts/Tracks
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="textarea6">
+                            Notes
+                        </label>
+                        <textarea name="Soil_Concerns_Notes" id="textarea6" placeholder=""></textarea>
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <div data-controltype="textblock">
+                        <p>
+                            <b>
+                                Stain
+                            </b>
+                        </p>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textinput">
+                        <label for="textinput25">
+                            Colour
+                        </label>
+                        <input name="stain_Colour" id="textinput25" placeholder="" value="" type="text">
+                    </div>
+                    <div class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Odour:
+                            </legend>
+                            <input id="radio36" name="Soil_Odour" value="Yes" type="radio">
+                            <label for="radio36">
+                                Yes
+                            </label>
+                            <input id="radio37" name="Soil_Odour" value="No" type="radio">
+                            <label for="radio37">
+                                No
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Condition:
+                            </legend>
+                            <input id="radio38" name="Soil_Conditions" value="Stable" type="radio">
+                            <label for="radio38">
+                                Stable
+                            </label>
+                            <input id="radio39" name="Soil_Conditions" value="Moving" type="radio">
+                            <label for="radio39">
+                                Moving
+                            </label>
+                        </fieldset>
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <div data-controltype="textblock">
+                        <p>
+                            <b>
+                                Slumping
+                            </b>
+                        </p>
+                    </div>
+                    <div id="Slumping_Age" class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="radio40" name="Slumping_Age" value="Recent" type="radio">
+                            <label for="radio40">
+                                Recent
+                            </label>
+                            <input id="radio41" name="Slumping_Age" value="Old" type="radio">
+                            <label for="radio41">
+                                Old
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Vegetation Establishing
+                            </legend>
+                            <input id="radio42" name="Soil_Vegetration_Establishing" value="Yes" type="radio">
+                            <label for="radio42">
+                                Yes
+                            </label>
+                            <input id="radio43" name="Soil_Vegetration_Establishing" value="No" type="radio">
+                            <label for="radio43">
+                                No
+                            </label>
+                        </fieldset>
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <div data-controltype="textblock">
+                        <p>
+                            <b>
+                                Stress Cracks
+                            </b>
+                        </p>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="radio44" name="Stress_Cracks" value="Yes" type="radio">
+                            <label for="radio44">
+                                Yes
+                            </label>
+                            <input id="radio45" name="Stress_Cracks" value="No" type="radio">
+                            <label for="radio45">
+                                No
+                            </label>
+                        </fieldset>
+                    </div>
+                    <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+                    <div data-controltype="textblock">
+                        <p>
+                            <b>
+                                Erosion
+                            </b>
+                        </p>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="radiobuttons">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="radio46" name="Erosion_Age" value="Recent" type="radio">
+                            <label for="radio46">
+                                Recent
+                            </label>
+                            <input id="radio47" name="Erosion_Age" value="Stable" type="radio">
+                            <label for="radio47">
+                                Stable
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="toggleswitch">
+                        <label for="toggleswitch1">
+                            Soil Deposition On Site
+                        </label>
+                        <select name="toggleswitch1" id="toggleswitch1" data-theme="" data-role="slider">
+                            <option value="off">
+                                No
+                            </option>
+                            <option value="on">
+                                Yes
+                            </option>
+                        </select>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="toggleswitch">
+                        <label for="toggleswitch2">
+                            Soil Deposition Off Site
+                        </label>
+                        <select name="toggleswitch2" id="toggleswitch2" data-theme="" data-role="slider">
+                            <option value="off">
+                                No
+                            </option>
+                            <option value="on">
+                                Yes
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div data-role="collapsible">
+                    <h3>
+                        Water Concerns
+                    </h3>
+                    <div id="Water Concerns" class="ui-field-contain" data-controltype="checkboxes">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="checkbox8" name="Sheen" type="checkbox" value="yes">
+                            <label for="checkbox8">
+                                Sheen
+                            </label>
+                            <input id="checkbox9" name="Cloudy" type="checkbox" value="yes">
+                            <label for="checkbox9">
+                                Cloudy
+                            </label>
+                            <input id="checkbox10" name="Bubbling" type="checkbox" value="yes">
+                            <label for="checkbox10">
+                                Bubbling
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="textarea7">
+                            Notes
+                        </label>
+                        <textarea name="Soil_Concerns_Notes" id="textarea7" placeholder=""></textarea>
+                    </div>
+                </div>
+                <div data-role="collapsible">
+                    <h3>
+                        Air
+                    </h3>
+                    <div id="Air_Concerns" class="ui-field-contain" data-controltype="checkboxes">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="checkbox11" name="Foul Odour" type="checkbox" value="yes">
+                            <label for="checkbox11">
+                                Foul Odour
+                            </label>
+                            <input id="checkbox122" name="Smoky" type="checkbox" value="yes">
+                            <label for="checkbox122">
+                                Smoky
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="textarea8">
+                            Notes
+                        </label>
+                        <textarea name="Air_Concerns_Notes" id="textarea8" placeholder=""></textarea>
+                    </div>
+                </div>
+                <div data-role="collapsible">
+                    <h3>
+                        Waste
+                    </h3>
+                    <div id="Waste_Concerns" class="ui-field-contain" data-controltype="checkboxes">
+                        <fieldset data-role="controlgroup" data-type="vertical">
+                            <legend>
+                                Choose:
+                            </legend>
+                            <input id="checkbox12" name="Domestic" type="checkbox" value="yes">
+                            <label for="checkbox12">
+                                Domestic
+                            </label>
+                            <input id="checkbox13" name="Other Industrial" type="checkbox" value="yes">
+                            <label for="checkbox13">
+                                Other Industrial
+                            </label>
+                            <input id="checkbox14" name="Flagging" type="checkbox" value="yes">
+                            <label for="checkbox14">
+                                Flagging
+                            </label>
+                            <input id="checkbox15" name="Survey Stakes" type="checkbox" value="yes">
+                            <label for="checkbox15">
+                                Survey Stakes
+                            </label>
+                            <input id="checkbox16" name="Drilling" type="checkbox" value="yes">
+                            <label for="checkbox16">
+                                Drilling
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="ui-field-contain" data-controltype="textarea">
+                        <label for="Waste_Concerns_Notes">
+                            Notes
+                        </label>
+                        <textarea name="" id="Waste_Concerns_Notes" placeholder=""></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-field-contain" data-controltype="camerainput">
+                <label for="camerainput4">
+                    Upload Photo
+                </label>
+                <input type="file" name="Upload Photo" id="camerainput4" accept="image/*"
+                capture="camera">
+            </div>
+            <input type="submit" value="Submit">
+            <div class="message4">
+        </div>
+            <div data-role="tabbar" data-iconpos="top" data-theme="a">
+                <ul>
+                    <li>
+                        <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                            Job Obs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                            Hazard Id
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                            Wildlife
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page6" data-transition="fade" data-theme="" data-icon="grid">
+                            Enviro
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+<div data-role="page" data-control-title="Thank You" id="page5">
+    <div role="main" class="ui-content">
+        <div style="" data-controltype="image">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
+        </div>
+        <hr style="height:5px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+        <div data-controltype="textblock">
+            <h1 style="text-align: center;" data-mce-style="text-align: center;">
+                <b>
+                    Thank You!
+                </b>
+            </h1>
+            <p style="text-align: center;">
+                <b>
+                    Your form submission has been successfully recieved.&nbsp;
+                </b>
+            </p>
+            <p>
+                <b>
+                    <br>
+                </b>
+            </p>
+        </div>
+    </div>
+    <div data-role="tabbar" data-iconpos="top" data-theme="a">
+        <ul>
+            <li>
+                <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                    Job Obs
+                </a>
+            </li>
+            <li>
+                <a href="#page2" data-transition="fade" data-theme="" data-icon="alert">
+                    Hazard Id
+                </a>
+            </li>
+            <li>
+                <a href="#page4" data-transition="fade" data-theme="" data-icon="info">
+                    Wildlife
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
