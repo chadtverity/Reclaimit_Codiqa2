@@ -7,7 +7,7 @@ $mysql_user="morphcb_slcktls";
 $mysql_pass="u8y-XpU-qEk-AV2";
 
 $mysql_database_name="morphcb_slicktools";
-$email="chad@morphcreative.ca";
+$email="Jobs.reclaimit@telus.net";
  
 
 
