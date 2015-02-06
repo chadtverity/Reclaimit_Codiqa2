@@ -87,29 +87,24 @@
             <input type="hidden" name="fb_form_embedded" value="">
             <input type="hidden" name="fb_js_enable" value="">
             <input type="hidden" name="fb_url_embedded" value="">
-                  <div>
-                <div>
-                     
-                        <input name="date" class="date" placeholder="" value="" type="hidden">
-                    </div>
-                  
-                    <div>
-                       
-                        <input name="Latitude" id="lat" placeholder="" value="" type="hidden">
-                    </div>
-                    <div>
-                        
-                        <input name="Longitude" id="long" placeholder="" value="" type="hidden">
-                    </div>
-                                    <script>
-        navigator.geolocation.getCurrentPosition(
-          function(pos) {
-            $("#lat").val(pos.coords.latitude);
-            $("#long").val(pos.coords.longitude);
-          }
-        );
-      </script>
-                </div>
+            <div class="ui-field-contain" data-controltype="textinput">
+                <label for="date">
+                    Timestamp
+                </label>
+                <input name="date" id="date" placeholder="" value="" type="text">
+            </div>
+            <div class="ui-field-contain" data-controltype="textinput">
+                <label for="Lat">
+                    Lat
+                </label>
+                <input name="Lat" id="Lat" placeholder="" value="" type="text">
+            </div>
+            <div class="ui-field-contain" data-controltype="textinput">
+                <label for="Long">
+                    Long
+                </label>
+                <input name="Long" id="Long" placeholder="" value="" type="text">
+            </div>
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -204,7 +199,7 @@
                 </div>
             </div>
             <div data-role="collapsible-set">
-                <div data-role="collapsible">
+                <div data-role="collapsible" data-collapsed="false">
                     <h3>
                         Observation Detail
                     </h3>
@@ -292,9 +287,9 @@
                                     <label for="checkbox31">
                                         Improving Work Conditions
                                     </label>
-                                    <input id="checkbox32" name="Designing Work Area" type="checkbox">
+                                    <input id="checkbox32" name="Guards and Barriers" type="checkbox">
                                     <label for="checkbox32">
-                                        Designing Work Area
+                                        Guards and Barriers
                                     </label>
                                     <input id="checkbox33" name="Workplace Design" type="checkbox">
                                     <label for="checkbox33">
@@ -521,10 +516,6 @@
                                     <label for="checkbox68">
                                         Dressing For The Weather
                                     </label>
-                                    <input id="checkbox69" name="Asking for Help Lifting" type="checkbox">
-                                    <label for="checkbox69">
-                                        Asking for Help Lifting
-                                    </label>
                                     <input id="checkbox70" name="Requesting Training" type="checkbox">
                                     <label for="checkbox70">
                                         Requesting Training
@@ -663,6 +654,10 @@
                                     <label for="checkbox90">
                                         Using Barriers
                                     </label>
+                                    <input id="checkbox122" name="Asking for Help Lifting" type="checkbox">
+                                    <label for="checkbox122">
+                                        Asking for Help Lifting
+                                    </label>
                                 </fieldset>
                             </div>
                             <h3>
@@ -697,12 +692,16 @@
                                     <label for="checkbox96">
                                         Using Barriers
                                     </label>
+                                    <input id="checkbox123" name="Asking for Help Lifting" type="checkbox">
+                                    <label for="checkbox123">
+                                        Asking for Help Lifting
+                                    </label>
                                 </fieldset>
                             </div>
                         </div>
                     </div>
                     <div data-role="collapsible-set">
-                        <div id="item24_label_0" data-role="collapsible">
+                        <div id="item24_label_0" data-role="collapsible" data-collapsed="false">
                             <h3>
                                 Leadership/Supervision
                             </h3>
@@ -734,9 +733,13 @@
                                     <label for="checkbox101">
                                         Inviting Expert Opinion
                                     </label>
-                                    <input id="checkbox103" name="Modeling Behaviour" type="checkbox">
+                                    <input id="checkbox103" name="Modeling Good Behaviour" type="checkbox">
                                     <label for="checkbox103">
-                                        Modeling Behaviour
+                                        Modeling Good Behaviour
+                                    </label>
+                                    <input id="checkbox124" name="Training" type="checkbox">
+                                    <label for="checkbox124">
+                                        Training
                                     </label>
                                     <input id="checkbox102" name="Other" type="checkbox">
                                     <label for="checkbox102">
@@ -782,6 +785,10 @@
                                     <input id="checkbox109" name="Modeling Behaviour" type="checkbox">
                                     <label for="checkbox109">
                                         Modeling Behaviour
+                                    </label>
+                                    <input id="checkbox125" name="Training" type="checkbox">
+                                    <label for="checkbox125">
+                                        Training
                                     </label>
                                     <input id="checkbox110" name="Other" type="checkbox">
                                     <label for="checkbox110">
@@ -846,32 +853,6 @@
         </div>
         <form id="docContainer" action="http://morphcreative.ca/slick/reclaimit/hazard_id_exported/hazard_id.php"
         method="POST" enctype="multipart/form-data">
-           <div>
-                <div>
-                   
-                    <div>
-                     
-                        <input name="Date" class="date" placeholder="" value="" type="hidden">
-                    </div>
-                            
-                    <div>
-                     
-                        <input name="Latitude" id="lat2" placeholder="" value="" type="hidden">
-                    </div>
-                    <div>
-                        
-                        <input name="Longitude" id="long2" placeholder="" value="" type="hidden">
-                    </div>
-                    <script>
-        navigator.geolocation.getCurrentPosition(
-          function(pos) {
-            $("#lat2").val(pos.coords.latitude);
-            $("#long2").val(pos.coords.longitude);
-          }
-        );
-      </script>
-                </div>
-            </div>
             <div id="item37_radio" class="ui-field-contain" data-controltype="radiobuttons">
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <input id="radio21" name="hazard_assess" value="Hazard ID" type="radio">
@@ -999,8 +980,8 @@
                     <option value="Choose One">
                         Choose One
                     </option>
-                    <option value="Propogate Collection">
-                        Propogate Collection
+                    <option value="Propagate Collection">
+                        Propagate Collection
                     </option>
                     <option value="Revegetation">
                         Revegetation
@@ -1008,8 +989,8 @@
                     <option value="Driving">
                         Driving
                     </option>
-                    <option value="Reclaimation">
-                        Reclaimation
+                    <option value="Reclamation">
+                        Reclamation
                     </option>
                     <option value="Working Around Aircraft">
                         Working Around Aircraft
@@ -1081,32 +1062,6 @@
         </div>
         <form id="docContainer" action="http://morphcreative.ca/slick/reclaimit/wildlife_id_exported/wildlife_id_m.php"
         method="POST" enctype="multipart/form-data">
-        <div>
-                <div>
-                   
-                    <div>
-                     
-                        <input name="date" class="date" placeholder="" value="" type="hidden">
-                    </div>
-                            
-                    <div>
-                     
-                        <input name="Latitude" id="lat3" placeholder="" value="" type="hidden">
-                    </div>
-                    <div>
-                        
-                        <input name="Longitude" id="long3" placeholder="" value="" type="hidden">
-                    </div>
-                    <script>
-        navigator.geolocation.getCurrentPosition(
-          function(pos) {
-            $("#lat3").val(pos.coords.latitude);
-            $("#long3").val(pos.coords.longitude);
-          }
-        );
-      </script>
-                </div>
-            </div>
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -1443,32 +1398,6 @@
             </h2>
         </div>
         <form action="">
-            <div>
-                <div>
-                   
-                    <div>
-                     
-                        <input name="date" class="date" placeholder="" value="" type="hidden">
-                    </div>
-                            
-                    <div>
-                     
-                        <input name="Latitude" id="lat4" placeholder="" value="" type="hidden">
-                    </div>
-                    <div>
-                        
-                        <input name="Longitude" id="long4" placeholder="" value="" type="hidden">
-                    </div>
-                    <script>
-        navigator.geolocation.getCurrentPosition(
-          function(pos) {
-            $("#lat4").val(pos.coords.latitude);
-            $("#long4").val(pos.coords.longitude);
-          }
-        );
-      </script>
-                </div>
-            </div>
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -1781,34 +1710,6 @@
                             Notes
                         </label>
                         <textarea name="" id="textarea9" placeholder=""></textarea>
-                    </div>
-                </div>
-                <div data-role="collapsible">
-                    <h3>
-                        Wildlife
-                    </h3>
-                    <div id="checkboxes5" class="ui-field-contain" data-controltype="checkboxes">
-                        <fieldset data-role="controlgroup" data-type="vertical">
-                            <legend>
-                                Choose:
-                            </legend>
-                            <input id="checkbox17" name="Nest" type="checkbox">
-                            <label for="checkbox17">
-                                Nest
-                            </label>
-                            <input id="checkbox18" name="Dens" type="checkbox">
-                            <label for="checkbox18">
-                                Dens
-                            </label>
-                            <input id="checkbox19" name="Tracks" type="checkbox">
-                            <label for="checkbox19">
-                                Tracks
-                            </label>
-                            <input id="checkbox20" name="Animal Lick" type="checkbox">
-                            <label for="checkbox20">
-                                Animal Lick
-                            </label>
-                        </fieldset>
                     </div>
                 </div>
             </div>
