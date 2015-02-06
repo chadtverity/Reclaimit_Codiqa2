@@ -65,7 +65,7 @@ Slick Tools
 		<gap:plugin name="org.apache.cordova.network-information"  />
 		<gap:plugin name="org.apache.cordova.splashscreen"  />
 		<gap:plugin name="org.apache.cordova.vibration"  />
-		<icon src="Icon.png" />
+		<icon src="icon.png" />
 		<gap:splash src="splash/splash.png" />
 		
 <gap:splash src="splash/ios/splash_960.png" gap:platform="ios" width="640" height="960" />
