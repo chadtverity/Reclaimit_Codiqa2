@@ -27,7 +27,7 @@
     </div>
     <div role="main" class="ui-content">
         <div style="" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
         <div data-controltype="textblock">
@@ -72,7 +72,7 @@
     </div>
     <div role="main" class="ui-content">
         <div style=" text-align:center" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <div data-controltype="textblock">
             <h2 style="text-align: center;">
@@ -81,30 +81,36 @@
                 </b>
             </h2>
         </div>
-        <form id="docContainer" action="http://morphcreative.ca/slick/reclaimit/job_observation2_exported/job_observation2.php"
-        method="POST" enctype="multipart/form-data">
+         <form id="docContainer" action="http://slicktools.ca/reclaimit/jobobservation.php"
+        method="POST" enctype="multipart/form-data"  data-ajax="false" data-offline>
             <input type="hidden" name="fb_form_custom_html" value="">
             <input type="hidden" name="fb_form_embedded" value="">
             <input type="hidden" name="fb_js_enable" value="">
             <input type="hidden" name="fb_url_embedded" value="">
-            <div class="ui-field-contain" data-controltype="textinput">
-                <label for="date">
-                    Timestamp
-                </label>
-                <input name="date" id="date" placeholder="" value="" type="text">
-            </div>
-            <div class="ui-field-contain" data-controltype="textinput">
-                <label for="Lat">
-                    Lat
-                </label>
-                <input name="Lat" id="Lat" placeholder="" value="" type="text">
-            </div>
-            <div class="ui-field-contain" data-controltype="textinput">
-                <label for="Long">
-                    Long
-                </label>
-                <input name="Long" id="Long" placeholder="" value="" type="text">
-            </div>
+             <div>
+                <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                  
+                    <div>
+                       
+                        <input name="Latitude" id="lat" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long" placeholder="" value="" type="hidden">
+                    </div>
+                                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat").val(pos.coords.latitude);
+            $("#long").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -842,7 +848,7 @@
     </div>
     <div role="main" class="ui-content">
         <div style=" text-align:center" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <div data-controltype="textblock">
             <h2 style="text-align: center;">
@@ -851,8 +857,33 @@
                 </b>
             </h2>
         </div>
-        <form id="docContainer" action="http://morphcreative.ca/slick/reclaimit/hazard_id_exported/hazard_id.php"
-        method="POST" enctype="multipart/form-data">
+        <form id="docContainer2" action="http://slicktools.ca/reclaimit/hazardid.php"
+        method="POST" enctype="multipart/form-data" data-ajax="false" data-offline>
+          <div>
+                <div>
+                   
+                    <div>
+                     
+                        <input name="Date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat2" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long2" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat2").val(pos.coords.latitude);
+            $("#long2").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
             <div id="item37_radio" class="ui-field-contain" data-controltype="radiobuttons">
                 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                     <input id="radio21" name="hazard_assess" value="Hazard ID" type="radio">
@@ -1051,7 +1082,7 @@
     </div>
     <div role="main" class="ui-content">
         <div style=" text-align:center" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <div data-controltype="textblock">
             <h2 data-mce-style="text-align: center;" style="text-align: center;">
@@ -1060,8 +1091,34 @@
                 </b>
             </h2>
         </div>
-        <form id="docContainer" action="http://morphcreative.ca/slick/reclaimit/wildlife_id_exported/wildlife_id_m.php"
-        method="POST" enctype="multipart/form-data">
+        <form id="docContainer3" action="http://slicktools.ca/reclaimit/wildlife.php"
+        method="POST" enctype="multipart/form-data" data-ajax="false" data-offline>
+         <div>
+                <div>
+                   
+                    <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat3" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long3" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat3").val(pos.coords.latitude);
+            $("#long3").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            </div>
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -1388,7 +1445,7 @@
     </div>
     <div role="main" class="ui-content">
         <div style="" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <div data-controltype="textblock">
             <h2 data-mce-style="text-align: center;" style="text-align: center;">
@@ -1397,7 +1454,32 @@
                 </b>
             </h2>
         </div>
-        <form action="">
+       <form id="docContainer4" action="http://slicktools.ca/reclaimit/env_obs.php" method="post" data-ajax="false" data-offline>
+               <div>
+                   
+                    <div>
+                     
+                        <input name="date" class="date" placeholder="" value="" type="hidden">
+                    </div>
+                            
+                    <div>
+                     
+                        <input name="Latitude" id="lat4" placeholder="" value="" type="hidden">
+                    </div>
+                    <div>
+                        
+                        <input name="Longitude" id="long4" placeholder="" value="" type="hidden">
+                    </div>
+                    <script>
+        navigator.geolocation.getCurrentPosition(
+          function(pos) {
+            $("#lat4").val(pos.coords.latitude);
+            $("#long4").val(pos.coords.longitude);
+          }
+        );
+      </script>
+                </div>
+            </div>
             <div data-role="collapsible-set">
                 <div data-role="collapsible">
                     <h3>
@@ -1747,7 +1829,7 @@
 <div data-role="page" data-control-title="Thank You" id="page5">
     <div role="main" class="ui-content">
         <div style="" data-controltype="image">
-            <img style="width: 100%; height: 100%" src="http://morphcreative.ca/slick/reclaimit/images/reclaimlogo.png">
+            <img style="width: 100%; height: 100%" src="http://slicktools.ca/reclaimit/images/reclaimlogo.png">
         </div>
         <hr style="height:5px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
         <div data-controltype="textblock">
